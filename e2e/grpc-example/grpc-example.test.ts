@@ -8,15 +8,17 @@ import { isAsyncIterable } from '@graphql-tools/utils';
 describe('gRPC Example', () => {
   const { compose, serve, service } = createTenv(__dirname);
   let movies: Service;
+  let pets: Service;
   beforeAll(async () => {
     movies = await service('movies');
+    pets = await service('pets');
   });
   it('generates the correct schema', async () => {
-    const { result } = await compose({ services: [movies], maskServicePorts: true });
+    const { result } = await compose({ services: [movies, pets], maskServicePorts: true });
     expect(result).toMatchSnapshot();
   });
   it('gets movies correctly', async () => {
-    const { output } = await compose({ services: [movies], output: 'graphql' });
+    const { output } = await compose({ services: [movies, pets], output: 'graphql' });
     const { execute } = await serve({ supergraph: output });
     const query = /* GraphQL */ `
       query GetMovies {
@@ -35,8 +37,22 @@ describe('gRPC Example', () => {
     `;
     await expect(execute({ query })).resolves.toMatchSnapshot('get-movies-grpc-example-result');
   });
+  it('gets pets correctly', async () => {
+    const { output } = await compose({ services: [movies, pets], output: 'graphql' });
+    const { execute } = await serve({ supergraph: output });
+    const query = /* GraphQL */ `
+      query GetPets {
+        petServiceGetAllPets(input: {}) {
+          pets {
+            id
+          }
+        }
+      }
+    `;
+    await expect(execute({ query })).resolves.toMatchSnapshot('get-pets-grpc-example-result');
+  });
   it('streams movies by cast correctly', async () => {
-    const { output } = await compose({ services: [movies], output: 'graphql' });
+    const { output } = await compose({ services: [movies, pets], output: 'graphql' });
     const { hostname, port } = await serve({ supergraph: output });
     const executor = buildHTTPExecutor({
       endpoint: `http://${hostname}:${port}/graphql`,
@@ -64,7 +80,7 @@ describe('gRPC Example', () => {
     }
   });
   it('fetches movies by cast as a subscription correctly', async () => {
-    const { output } = await compose({ services: [movies], output: 'graphql' });
+    const { output } = await compose({ services: [movies, pets], output: 'graphql' });
     const { hostname, port } = await serve({ supergraph: output });
     const executor = buildHTTPExecutor({
       endpoint: `http://${hostname}:${port}/graphql`,

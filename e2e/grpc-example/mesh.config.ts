@@ -25,6 +25,21 @@ export const composeConfig = defineComposeConfig({
         }),
       ],
     },
+    {
+      sourceHandler: loadGrpcSubgraph('pets', {
+        endpoint: 'localhost:' + opts.getServicePort('pets'),
+        metaData: {
+          someKey: 'someValue',
+          connection_type: '{context.headers.connection}',
+        },
+        source: './services/pets/proto/pet.proto',
+      }),
+      transforms: [
+        createNamingConventionTransform({
+          fieldNames: 'camelCase',
+        }),
+      ],
+    },
   ],
 });
 
