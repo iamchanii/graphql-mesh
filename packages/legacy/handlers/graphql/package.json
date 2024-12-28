@@ -42,7 +42,7 @@
     "@graphql-mesh/utils": "^0.103.10",
     "@graphql-tools/delegate": "^10.0.28",
     "@graphql-tools/federation": "^3.0.0",
-    "@graphql-tools/merge": "^9.0.12",
+    "@graphql-tools/merge": "patch:@graphql-tools/merge@npm%3A9.0.15#~/.yarn/patches/@graphql-tools-merge-npm-9.0.15-60fcf7bdea.patch",
     "@graphql-tools/url-loader": "^8.0.9",
     "@graphql-tools/utils": "^10.6.0",
     "lodash.get": "^4.4.2",

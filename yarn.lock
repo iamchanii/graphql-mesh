@@ -3679,7 +3679,7 @@ __metadata:
     "@graphql-mesh/compose-cli": "workspace:*"
     "@grpc/grpc-js": "npm:^1.12.2"
     "@grpc/proto-loader": "npm:^0.7.13"
-    "@omnigraph/grpc": "workspace:*"
+    "@omnigraph/grpc": "patch:@omnigraph/grpc@workspace%3Apackages/loaders/grpc#~/.yarn/patches/@omnigraph-grpc-workspace-efcbd2acb5.patch"
     graphql: "npm:16.10.0"
   languageName: unknown
   linkType: soft
@@ -6273,7 +6273,7 @@ __metadata:
     "@graphql-mesh/utils": "npm:^0.103.10"
     "@graphql-tools/delegate": "npm:^10.0.28"
     "@graphql-tools/federation": "npm:^3.0.0"
-    "@graphql-tools/merge": "npm:^9.0.12"
+    "@graphql-tools/merge": "patch:@graphql-tools/merge@npm%3A9.0.15#~/.yarn/patches/@graphql-tools-merge-npm-9.0.15-60fcf7bdea.patch"
     "@graphql-tools/url-loader": "npm:^8.0.9"
     "@graphql-tools/utils": "npm:^10.6.0"
     lodash.get: "npm:^4.4.2"
@@ -6291,7 +6291,7 @@ __metadata:
     "@graphql-mesh/transport-grpc": "npm:^0.1.10"
     "@graphql-mesh/types": "npm:^0.103.10"
     "@graphql-mesh/utils": "npm:^0.103.10"
-    "@omnigraph/grpc": "npm:^0.1.3"
+    "@omnigraph/grpc": "patch:@omnigraph/grpc@workspace%3Apackages/loaders/grpc#~/.yarn/patches/@omnigraph-grpc-workspace-efcbd2acb5.patch"
     tslib: "npm:^2.4.0"
   peerDependencies:
     graphql: "*"
@@ -7939,44 +7939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/merge@npm:6.1.0":
-  version: 6.1.0
-  resolution: "@graphql-tools/merge@npm:6.1.0"
-  dependencies:
-    "@graphql-tools/schema": "npm:6.1.0"
-    "@graphql-tools/utils": "npm:6.1.0"
-    tslib: "npm:~2.0.1"
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0
-  checksum: 10c0/ce1fb4c2fc69b1ec9f1506114fe48eb53a089b36f7872bba1c974a78fc0e6c3827b05215b6c4829581696b1dadbb4204d5aaff9aa51f625da7072003dc88f443
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/merge@npm:8.3.1":
-  version: 8.3.1
-  resolution: "@graphql-tools/merge@npm:8.3.1"
-  dependencies:
-    "@graphql-tools/utils": "npm:8.9.0"
-    tslib: "npm:^2.4.0"
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/dce29916fa6bd134947f584080ab18908b23537ec8dff74d838bf6c7be34b3e14c527d4ffd18b8f91efe6bb967f170f7393a2383035ed952f88010b60536a106
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/merge@npm:^8.4.1":
-  version: 8.4.2
-  resolution: "@graphql-tools/merge@npm:8.4.2"
-  dependencies:
-    "@graphql-tools/utils": "npm:^9.2.1"
-    tslib: "npm:^2.4.0"
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/2df55222b48e010e683572f456cf265aabae5748c59f7c1260c66dec9794b7a076d3706f04da969b77f0a32c7ccb4551fee30125931d3fe9c98a8806aae9a3f4
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/merge@npm:^9.0.0, @graphql-tools/merge@npm:^9.0.12, @graphql-tools/merge@npm:^9.0.15":
+"@graphql-tools/merge@npm:9.0.15":
   version: 9.0.15
   resolution: "@graphql-tools/merge@npm:9.0.15"
   dependencies:
@@ -7985,6 +7948,18 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
   checksum: 10c0/f40e4b32dc296f7d258e2cf64c3dbca4761a8665d2117d19c2765921e329fe35d4f006acf661d4fc5d5c951e773ad44ad803ee2acd2d14d4f3f542b9478835b8
+  languageName: node
+  linkType: hard
+
+"@graphql-tools/merge@patch:@graphql-tools/merge@npm%3A9.0.15#~/.yarn/patches/@graphql-tools-merge-npm-9.0.15-60fcf7bdea.patch":
+  version: 9.0.15
+  resolution: "@graphql-tools/merge@patch:@graphql-tools/merge@npm%3A9.0.15#~/.yarn/patches/@graphql-tools-merge-npm-9.0.15-60fcf7bdea.patch::version=9.0.15&hash=b0e212"
+  dependencies:
+    "@graphql-tools/utils": "npm:^10.7.0"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: 10c0/3b14715a9fa65472b1649eca2739445dea7a0b447eecc6e8a48c1a7b778d83074f2b3d5dab157cc18caa194ce1e08c000692a09db5e66f2e660fba126d66b4dd
   languageName: node
   linkType: hard
 
@@ -10215,7 +10190,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@omnigraph/grpc@npm:^0.1.3, @omnigraph/grpc@workspace:*, @omnigraph/grpc@workspace:packages/loaders/grpc":
+"@omnigraph/grpc@patch:@omnigraph/grpc@workspace%3Apackages/loaders/grpc#~/.yarn/patches/@omnigraph-grpc-workspace-efcbd2acb5.patch":
+  version: 0.0.0-use.local
+  resolution: "@omnigraph/grpc@patch:@omnigraph/grpc@workspace%3Apackages/loaders/grpc#~/.yarn/patches/@omnigraph-grpc-workspace-efcbd2acb5.patch::version=0.1.3&hash=100992"
+  dependencies:
+    "@ardatan/grpc-reflection-js": "npm:^0.0.2"
+    "@graphql-mesh/cross-helpers": "npm:^0.4.9"
+    "@graphql-mesh/string-interpolation": "npm:^0.5.7"
+    "@graphql-mesh/transport-common": "npm:^0.7.13"
+    "@graphql-tools/utils": "npm:^10.6.0"
+    "@grpc/grpc-js": "npm:^1.1.7"
+    "@whatwg-node/disposablestack": "npm:^0.0.5"
+    globby: "npm:^11.1.0"
+    graphql-compose: "npm:^9.0.11"
+    graphql-scalars: "npm:^1.23.0"
+    lodash.has: "npm:^4.5.2"
+    protobufjs: "npm:^7.2.5"
+  peerDependencies:
+    graphql: "*"
+  checksum: 10c0/d6e653e667f6820876ed6a3dde6166d5feec2661d9989577afcb79494468ca1ff35efd5343152cde02171aa0bf79fed645e9c1b5562c4d90f32ca4838b541b05
+  languageName: unknown
+  linkType: soft
+
+"@omnigraph/grpc@workspace:packages/loaders/grpc":
   version: 0.0.0-use.local
   resolution: "@omnigraph/grpc@workspace:packages/loaders/grpc"
   dependencies:

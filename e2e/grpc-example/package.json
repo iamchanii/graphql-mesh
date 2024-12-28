@@ -7,7 +7,7 @@
     "@graphql-mesh/compose-cli": "workspace:*",
     "@grpc/grpc-js": "^1.12.2",
     "@grpc/proto-loader": "^0.7.13",
-    "@omnigraph/grpc": "workspace:*",
+    "@omnigraph/grpc": "patch:@omnigraph/grpc@workspace%3Apackages/loaders/grpc#~/.yarn/patches/@omnigraph-grpc-workspace-efcbd2acb5.patch",
     "graphql": "16.10.0"
   }
 }
